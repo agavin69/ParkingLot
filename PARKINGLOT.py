@@ -17,15 +17,18 @@ class Vehicle():
 
 class Car(Vehicle):
     def __init__(self, licensePlate, color):
-        pass
+        self.licensePlate = licensePlate
+        self.color = color
 
 class Bike(Vehicle):
     def __init__(self, licensePlate, color):
-        pass
+        self.licensePlate = licensePlate
+        self.color = color
 
 class Bus(Vehicle):
     def __init__(self, licensePlate, color):
-        pass
+        self.licensePlate = licensePlate
+        self.color = color
 
 class Spots():
     def __init__(self, row , spotNumber, vehicleType):
@@ -69,3 +72,6 @@ class ParkingLot():
         self.numberSlots = numberSlots
 
         for i in range(number_of_Levels):
+            self.levels.append(Levels(i, rows , numberSlots))
+
+            
