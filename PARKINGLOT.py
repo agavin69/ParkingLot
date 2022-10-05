@@ -55,12 +55,8 @@ class Levels:
     def __init__(self, floorNumber, spots_per_row):
         self.floorNumber = floorNumber
         self.spots_per_row = spots_per_row
-       
+        self.number_spots = 0
         self.availableSpots = []
-
-
-
-
 
 
 
@@ -73,5 +69,16 @@ class ParkingLot():
 
         for i in range(number_of_Levels):
             self.levels.append(Levels(i, rows , numberSlots))
+
+    def parkVehicle(self , vehicle):
+        for level in self.levels:
+            if level.parkVehicle(vehicle):
+                return True
+            return False
+
+    def leave(self,vehicle):
+        for level in self.levels:
+            if level.remove(vehicle):
+                return True
 
             
